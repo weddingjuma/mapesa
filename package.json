@@ -1,0 +1,14 @@
+{
+  "name": "mapesa",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Denzel Wamburu",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "bleno": "^0.3.5"
+  }
+}
