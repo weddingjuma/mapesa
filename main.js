@@ -8,6 +8,7 @@ var options = {
     username: process.env.USERNAME,      //
     format: 'json'                  // or xml
 };
+
 var AfricasTalking = require('africastalking')(options);
 var LoadAverageCharacteristic = require('./characteristics/loadaverage');
 var UptimeCharacteristic = require('./characteristics/uptime');
@@ -24,6 +25,19 @@ function SystemInformationService() {
     ]
   });
 };
+var payments = AfricasTalking.PAYMENTS;
+var opts = {
+  productName: 'mapesa',
+  phoneNumber: '254704654445',
+  currencyCode: 'KES',
+  amount: 50
 
+}
+function RequestPayment() {
+  payments.checkout(opts)
+        .then(success)
+        .catch(error);
+console.log('Payments called')
+}
 util.inherits(SystemInformationService, bleno.PrimaryService);
 module.exports = SystemInformationService;
