@@ -35,8 +35,12 @@ var opts = {
 }
 function RequestPayment() {
   payments.checkout(opts)
-        .then(success)
-        .catch(error);
+        .then(function(s) {
+          console.log(s);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
 console.log('Payments called')
 }
 util.inherits(SystemInformationService, bleno.PrimaryService);
