@@ -1,6 +1,14 @@
 var bleno = require('bleno');
 var util = require('util');
+require('dotenv').config()
 
+var options = {
+    sandbox: true,                  // true/false to use/not sandbox
+    apiKey: process.env.APIKEY,         // Use sandbox username and API key if you're using the sandbox
+    username: process.env.USERNAME,      //
+    format: 'json'                  // or xml
+};
+var AfricasTalking = require('africastalking')(options);
 var LoadAverageCharacteristic = require('./characteristics/loadaverage');
 var UptimeCharacteristic = require('./characteristics/uptime');
 var MemoryCharacteristic = require('./characteristics/memory');
